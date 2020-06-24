@@ -77,3 +77,6 @@ list_3 = [10,20,30,50,100,57,555]
 print(list_3[len(list_3) - 1])
 print(list_3[list_3.__len__() - 2])
 
+
+print("test commit to Git")
+
