@@ -140,3 +140,111 @@
 # yuanzu_2 = (111,222,333,444)
 # print(yuanzu_2)
 
+# -------------------------------------------------------------------------if语句---------------------------------------------------------------------------
+# age = 100
+# if age > 30 and age > 70 :
+#     print('top')
+# if age < 50 or age > 80 :
+#     print('middle')
+# elif age == 100:
+#     print('100')
+# else:
+#     print('NONE')
+
+# # 检查列表中的值
+# list_10 = ['fxc','fc','fxz','gl','lw','jxq']
+# print('fxc' in list_10)
+# print('hhh' in list_10)
+# if 'fxc' in list_10 :                                           # 存在于列表中
+#     print('good')
+# if 'haha' not in list_10:                                       # 不存在于列表中
+#     list_10.append('haha')
+#     print(list_10)
+
+# if (1,2,3,4,5):
+#     print('True')
+# else:
+#     print('False')
+
+# # Test01-----序数筛选
+# for value in range(1,10):
+#     if value == 1:
+#         print('1st')
+#     elif value == 2:
+#         print('2ed')
+#     elif value == 3:
+#         print('3rd')
+#     else:
+#         print(str(value)+'th')
+
+# # Test02-----for-if使用
+# # user_list = ['fxc','fc','fxz','gl','lw','admin']
+# user_list = []
+# if user_list:
+#     for user_name in user_list:
+#         if user_name == 'admin':
+#             print(user_name+'\tgood')
+#         else:
+#             print(user_name+'\tunbelieveable')
+# else:
+#     print('list is null')
+
+# # -----------------------------------------------------------------------------字典-----------------------------------------------------------------------
+# user_imformation = {'name':'fxc','age':25,120:'heaviey','other':['other_1','other_2','other_3'],'another':{'another_1':11111,'another_2':22222}}
+# # 添加键值对
+# user_healthy = {}
+# user_healthy['Heigh'] = 175
+# user_healthy['heavey'] = 120
+# user_healthy['3W'] = {'xw':50,'yw':40,'tw':10}
+# # user_healthy['heavey'] = 115
+# # 删除键值对
+# del user_healthy['3W']
+# print(user_healthy)
+
+# 遍历字典
+# user_0 = {
+#     'username':'fxc',
+#     'first_name':'f',
+#     'last_name':'xc',
+# }
+# for key ,value in user_0.items():                                       # 注意for循环后字典的写法：user_0.items()
+#     print('Key : ' + key)
+#     print('value : ' + value)
+
+# 遍历字典中所有的键
+# for key in user_0.keys():                                                  # keys()实际返回一个列表，包含字典中所有的键
+#     print(key)
+
+# favorite_language = {
+#     'jen':'python',
+#     'sarah':'c',
+#     'edward':'ruby',
+#     'phil':'python',
+#     'aliex':'java',
+# }
+# for name in sorted(favorite_language.keys()):
+#     print(name)
+
+# 遍历字典中所有的值
+# for language in favorite_language.values():                               #value()实际返回一个列表，包含字典中所有的值
+#     print(language)
+# for language in set(favorite_language.values()):                            # set()函数剔除重复的值
+#     print(language,end='\t')
+
+# 字典嵌套
+# # 1.列表中储存字典
+# # 2.字典中储存列表
+# favorite_language_01 = {
+#     'jen':['python','ruby'],
+#     'sarch':['c'],
+#     'edward':['ruby','go'],
+#     'phil':['python','java'],
+# }
+# for name , language in favorite_language_01.items():
+#     if len(language) > 1:
+#         print(name.title() + '\tare')
+#         for language_01 in language:
+#             print('\t' + language_01)
+#     else:
+#         print(name.title() + '\tis\t' + language[0])
+# # 3.字典中储存字典
