@@ -248,3 +248,22 @@
 #     else:
 #         print(name.title() + '\tis\t' + language[0])
 # # 3.字典中储存字典
+
+# # 控制台输入函数：input()
+# message = 'if you tell us who you are ......'
+# message += '\nWhat is you name ? '
+# name = input(message)
+# print('\nhi ' + name)
+
+# # int()转化数字
+# height = input('how tall are you ?\n')
+# height = int(height)
+# if height > 180:
+#     print('OK')
+# else:
+#     print('NO')
+# ----------------------------while循环---------------------------
+
+
+
+
