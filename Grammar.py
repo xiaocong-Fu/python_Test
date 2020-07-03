@@ -262,8 +262,71 @@
 #     print('OK')
 # else:
 #     print('NO')
-# ----------------------------while循环---------------------------
+# # ----------------------------while循环---------------------------
+# prompt = 'Tell me something ,and i will repeat it back to you '
+# prompt += '\nEnter quit to end the program....\n'
+# message = ''
+# while message != 'quit':
+#     message = input(prompt)
+#     if message != 'quit':
+#         print(message)
+# # -----使用标志-----
+# prompt = 'Tell me something ,and i will repeat it back to you '
+# prompt += '\nEnter quit to end the program....\n'
+# # message = ''
+# active = True
+# while active:
+#     message = input(prompt)
+#     if message == 'quit':
+#         active = False
+#     if message != 'quit':
+#         print(message)
+# -----使用break退出循环-----
+# -----在循环中使用continue-----
+# current_number = 0
+# while current_number < 10 :
+#     current_number += 1
+#     if current_number% 2 == 0:
+#         continue                                                            #执行完continue后再不执行此次循环的剩余语句。
+#     print(current_number)
+# # 不同年龄的电影票
+# message = 'Please tell me how old are you \n'
+# active = True
+# while active:
+#     age_str = input(message)
+#     if age_str.isdigit():                                                     #age_str.isdigit():检测一个字符串是不是纯数字（不包含判断带浮点的数字）
+#         age = int(age_str)
+#         print(age)
+#         if age <= 3 :
+#             print('you are freefom')
+#         if age > 3 and age <=12 :
+#             print('you should pay 10$')
+#         if age > 12:
+#             print('you should pay 15$')
+#         active = False
+#     else:
+#         continue
 
-
-
-
+# #判断一个字符串是否是纯数字（包括浮点数）
+# def is_number(str):
+#     try:
+#         float(str)
+#         return True
+#     except ValueError:
+#         pass
+#
+#     try:
+#         import unicodedata
+#         unicodedata.numeric(str)
+#         return True
+#     except (TypeError,ValueError):
+#         pass
+#     return False
+#
+# print(is_number('fool'))
+# print(is_number('100'))
+# print(is_number(' '))
+# print(is_number('1.555'))
+# print(is_number('-2.666'))
+# print(is_number('2e5'))
+# print(is_number('3fxc'))
