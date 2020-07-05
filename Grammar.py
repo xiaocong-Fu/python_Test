@@ -330,3 +330,5 @@
 # print(is_number('-2.666'))
 # print(is_number('2e5'))
 # print(is_number('3fxc'))
+
+# while循环结束，函数结束，这主要有，参数传递，模块调用
