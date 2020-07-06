@@ -331,4 +331,116 @@
 # print(is_number('2e5'))
 # print(is_number('3fxc'))
 
-# while循环结束，函数结束，这主要有，参数传递，模块调用
+# # while中列表之间的移动
+# unconfirmed_users = ['fxc','fxz','fc','gl']
+# confired_users = []
+# while unconfirmed_users:
+#     current_user = unconfirmed_users.pop()                              # pop()每次一个从列表末尾删除元素,并返回该元素，永久删除
+#     confired_users.append(current_user)
+# for confired_user in confired_users:
+#     print(confired_user)
+# print(unconfirmed_users)
+
+# # 用户输入填充字典
+# responses = {}
+# polling_active = True
+# while polling_active:
+#     name = input('What is you name?\n')
+#     response = input('which would you tell me ?\n')
+#     responses[name] = response
+#     repeat = input('Will you Stop???\n(YES OR NO)\n')
+#     if repeat == 'YES':
+#         polling_active = False
+# print(responses)
+
+# -----------------------------------------------------函数----------------------------------------------------
+# # 关键字实参
+# def describe_pet(animal_type,pet_name):
+#     print('My ' + animal_type + ' name is ' + pet_name + ' !!!!!!!!!!')
+# describe_pet(animal_type='Dog',pet_name='yayaya')                               # 关键字实参就是赋予参数值时指定参数
+
+# 参数默认值
+# def describe_pet(pet_name,animal_type = 'Dog'):
+#     animal_type = 'pig'
+#     print('My ' + animal_type + ' name is ' + pet_name + ' !!!!!!!!!!')
+# describe_pet(animal_type='Dog',pet_name='yayaya')
+
+# # 返回值
+# def get_formatted_name(first_name,last_name):
+#     full_name = first_name + ' ' + last_name
+#     return full_name
+# print(get_formatted_name('fu','xiaocong'))
+
+# # 实参可选
+# def get_formatted_name(first_name,last_name,middle_name = ''):                  # 默认参数必须放在最后
+#     if middle_name:
+#         full_name = first_name + ' ' + middle_name + ' ' + last_name
+#     else:
+#         full_name = first_name + ' ' + last_name
+#     return full_name
+#
+# print(get_formatted_name('FU','xiaocong'))
+# print(get_formatted_name('fu','xiaocong','GGGGGG'))
+
+# # 返回字典
+# def build_person(first_name,last_name,age = ''):
+#     person = {'first':first_name,'last':last_name}
+#     if age:
+#         person['age'] = age
+#     return person
+# print(build_person('FU','xiaocong'))
+# print(build_person('FU','xiaocong',25))
+
+# # 函数中修改列表
+# unprited_designs = ['iphone','robot','case']
+# completed_models = []
+# def print_modles(unprited_designs,completed_models):                            # unprited_designs列表中的元素已经被修改
+#     while unprited_designs:
+#         current_design = unprited_designs.pop()
+#         completed_models.append(current_design)
+#
+# def show_completed_models(completed_models):
+#     for completed_model in completed_models:
+#         print(completed_model,end='\t')
+# #
+# # print_modles(unprited_designs,completed_models)
+# # show_completed_models(completed_models)
+#
+# # 禁止函数修改列表
+# print_modles(unprited_designs[:],completed_models)                              # unprited_designs列表中的元素没有被修改。  传递的是列表副本unprited_designs[:]
+# show_completed_models(completed_models)
+
+# # 传递任意数量实参
+# def make_pizza(*toppings):
+#     print(type(toppings))                                                          # 输出结果：<class 'tuple'>，(123, 'dasdasda', [1222, 'dasdas'])
+#     print(toppings)                                                                # 参数储存在一个元组中
+# make_pizza(123,'dasdasda',[1222,'dasdas'])
+
+
+# # 任意数量关键字实参
+# def build_profile(first,last,**user_info):
+#     print(type(user_info))                                                          # 输出结果<class 'dict'>，任意数量关键字参数存在字典中
+#     profile = {}
+#     profile['first_name'] = first
+#     profile['last_name'] = last
+#     for key , value in user_info.items():
+#         profile[key] = value
+#     return profile
+#
+# user_profile = build_profile('FU','xiaocong',age = 25,sex = 'male')                 # 注意：任意数量 关键字 参数的赋值方式：age = 25,sex = 'male'
+# print(user_profile)
+
+
+# 导入函数
+# 方法一：import 模块名    导入模块中所有的函数，可使用该模块任意一个函数
+#       调用方法：模块名.函数名（）
+# 方法二：导入特定函数： from 模块名 import 函数名1，函数名2，函数名3
+#       调用方法：直接使用函数名调用
+# 方法三：使用as给函数指定别名：from 模块名 import 函数名1 as 别名1，函数名2 as 别名2，函数名3 as 别名3
+#       调用方法：直接使用别名调用
+# 方法四：使用as给模块指定别名：import 模块名 as 别名
+#       调用方法：别名.函数名（）
+# 方法五：导入模块中所有函数：from 模块名 import *               （不建议使用此方法，调用第三方库时会出现函数名重名的情况，导致结果未知）
+#       调用方法：直接使用函数名调用
+
+# ------------------------------------------------------类--------------------------------------------------
