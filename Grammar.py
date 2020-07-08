@@ -444,3 +444,19 @@
 #       调用方法：直接使用函数名调用
 
 # ------------------------------------------------------类--------------------------------------------------
+class Battery():
+    def __init__(self,battery_siaze):
+        self.battery_size = battery_siaze
+
+    def describe_battery(self):
+        print('from GGGGG This car has a ' + str(self.battery_size) + ' -kwh battery')
+
+    def get_range(self):
+        if self.battery_size == 70:
+            range = 500
+        elif self.battery_size == 85:
+            range = 1000
+        else:
+            range = 500000
+        message = 'This car can go xxxxxxxxxxxx ' + str(range) + ' miles on a full charge!!!!'
+        print(message)
