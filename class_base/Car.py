@@ -31,7 +31,7 @@ class car():
 
 # -------------------------------------------继承-----------------------------------------
 import Grammar
-
+# Grammar.path.append('D:\pythonCharm\Test\Test02\BaseTest\Grammar.py')
 class ElectricCar(car):                                                 # 创建子类时，父类必须包含在当前文件中，且位于子类前面，定义子类时，括号内必须制定父类名称
     def __init__(self,make,model,year,color):
         super().__init__(make,model,year)                               # super()是一个特殊函数，帮助Python将父类和子类关联起来。这行代码让Python调用ElectricCar的父类的方法__init__()，
