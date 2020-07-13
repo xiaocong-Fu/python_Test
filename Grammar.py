@@ -443,20 +443,79 @@
 # 方法五：导入模块中所有函数：from 模块名 import *               （不建议使用此方法，调用第三方库时会出现函数名重名的情况，导致结果未知）
 #       调用方法：直接使用函数名调用
 
-# ------------------------------------------------------类--------------------------------------------------
-class Battery():
-    def __init__(self,battery_siaze):
-        self.battery_size = battery_siaze
+# # ------------------------------------------------------类--------------------------------------------------
+# class Battery():
+#     def __init__(self,battery_siaze):
+#         self.battery_size = battery_siaze
+#
+#     def describe_battery(self):
+#         print('from GGGGG This car has a ' + str(self.battery_size) + ' -kwh battery')
+#
+#     def get_range(self):
+#         if self.battery_size == 70:
+#             range = 500
+#         elif self.battery_size == 85:
+#             range = 1000
+#         else:
+#             range = 500000
+#         message = 'This car can go xxxxxxxxxxxx ' + str(range) + ' miles on a full charge!!!!'
+#         print(message)
 
-    def describe_battery(self):
-        print('from GGGGG This car has a ' + str(self.battery_size) + ' -kwh battery')
+# ---------------------------------------------------文件和异常-----------------------------------------------
+# 读文件
+# with open('pai.txt') as file_object:                                        # 在于Grammar.py同级目录中寻找pai.txt，，with：让Python负责妥善地打开和关闭文件,只能在with方法内使用
+#     print(type(file_object))                                                # 输出结果：<class '_io.TextIOWrapper'>
+#     contents = file_object.read()
+#     # print(contents)
+#     print(contents.rstrip())                                                # rstrip()删除字符串末尾的空白。
 
-    def get_range(self):
-        if self.battery_size == 70:
-            range = 500
-        elif self.battery_size == 85:
-            range = 1000
-        else:
-            range = 500000
-        message = 'This car can go xxxxxxxxxxxx ' + str(range) + ' miles on a full charge!!!!'
-        print(message)
+# file = r'test_file\day_note.txt'                                              # 开头单引号前加r，可使用windows系统的路径
+# with open(file) as file_object:                                               # 使用相对路径在不同文件夹中寻找day_note.txt（也可使用绝对路径，注意要是用'/'）
+#     print(type(file_object))                                                  # 输出结果：<class '_io.TextIOWrapper'>
+#     # contents = file_object.read()
+#     # print(contents.rstrip())
+#     # for line in file_object:
+#     #     print(line.rstrip())
+#     lines = file_object.readlines()                                           # readlines()读取文件中每一行,并将其存储在列表中,这个列表可在with函数外使用
+#     print(type(lines))
+#
+# print(lines)
+
+# filename = 'pai.txt'
+# with open(filename) as file_object:
+#     lines = file_object.readlines()
+#
+# pi_string = ''
+# for line in lines:
+#     pi_string += line.rstrip()
+#
+# print(pi_string[:30] + '.......')
+# print(len(pi_string))
+#
+# if '19941006' in pi_string:
+#     print('YES')
+# else:
+#     print('NO')
+
+# 写文件
+# filename = r'test_file\day_note.txt'
+# with open(filename,'w') as file_object:                                         # 四种模式：'r'读模式，‘w’写模式，‘a’附加模式，‘r+’读取和写入文件模式
+#     file_object.write('明日复明日，明日何其多')                                     # write（）会清空该文件之前的内容，python只能将字符串写入文本文件。
+                                                                                #                       要将数值数据存储到文本文件中，必须先使用函数str()将其转换为字符串格式。
+
+# 写入多行
+# filename = r'test_file\day_note.txt'
+# with open(filename,'w') as file_object:
+#     file_object.write('明日复明日，明日何其多\n')
+#     file_object.write('山不在高，有仙则名\n')
+
+# 附加模式打开文件，给文件添加内容，而不是覆盖原有的内容，文件不存在会创建一个空文件
+# filename = r'test_file\day_note.txt'
+# with open(filename,'a') as file_object:
+#     file_object.write('水不在深，有龙则灵\n')
+#     file_object.write('斯是陋室，惟吾德馨\n')
+#
+# filename = r'test_file\day_note_2.txt'
+# with open(filename,'a') as file_object:
+#     file_object.write('可以调素琴，阅金经，\n')
+#     file_object.write('无丝竹之乱耳，无案牍之劳形\n')
