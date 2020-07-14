@@ -519,3 +519,70 @@
 # with open(filename,'a') as file_object:
 #     file_object.write('可以调素琴，阅金经，\n')
 #     file_object.write('无丝竹之乱耳，无案牍之劳形\n')
+
+
+# # read(),readline(),readlines()的区别：
+# # read()函数，返回整个文件的内容成一个字符串，read(size)标识返回多少个字符的字符串。
+# # readline()函数，按行读取文件，返回一行的字符串
+# # readlines()函数，按行读取文件，返回一个字符串列表
+
+
+# ------------------------------------------------------异常--------------------------------------------------
+# 异常使用try--except代码块处理
+# try-except-else代码块的工作原理大致如下：Python尝试执行try代码块中的代码；只有可能引发异常的代码才需要放在try语句中。
+#       有时候，有一些仅在try代码块成功执行时才需要运行的代码；这些代码应放在else代码块中。except代码块告诉Python，如果它尝试运行try代码块中的代码时引发了指定的异常，该怎么办。
+
+# 1.处理ZeroDivisionError异常                       division：除法
+# print(5/0)
+# try:
+#     print(5/0)
+# except ZeroDivisionError:
+#     print('you cant division by zero')
+
+# print('give me two number and i wll division them \nenter q to quit')
+# while True:
+#     first_number = input('fierst number is ')
+#     if first_number == 'q':
+#         break
+#     second_number = input('second number is ')
+#     if second_number == 'q':
+#         break
+#     # answer = int(first_number) / int(second_number)
+#     try:
+#         answer = int(first_number) / int(second_number)
+#     except ZeroDivisionError:                                                           # except代码块：依赖于try代码块失败执行的代码放到except代码块中。
+#         print('you cant divison by 0')
+#         # answer = 99999
+#     else:                                                                               # else代码块：依赖于try代码块成功执行的代码都应放到else代码块中。
+#         print(answer)
+
+# 2.处理FileNotFoundError异常
+# # 分析文本
+# filename = r'test_file\day_note.txt'
+# try:
+#     with open(filename) as file_object:
+#         contents = file_object.read()
+# except FileNotFoundError:
+#     print('this file does not exit ')
+# else:
+#     words = contents.split()                                                                # split():以空格为分隔符将字符串拆分成多个部分，并储存在列表中。
+#     num_words = len(words)
+#     print('this file has about ' + str(num_words) + ' words')
+
+# # 使用多个文件
+# def count_words(filename):
+#     try:
+#         with open(filename) as fileobject:
+#             contents = fileobject.read()
+#     except FileNotFoundError:
+#         pass                                                                                # pass语句，可在pass后将错误信息写入日志，不用输出到控制台。
+#         print(filename + ' --This file is not exit ,Please check!!!!')
+#     else:
+#         words = contents.split()
+#         print(filename + ' --This file has about ' + str(len(words)) + ' words')
+# filenames = [r'test_file\day_note.txt',r'test_file\day_note_2.txt','pai.txt','gg.txt']
+#
+# for filename in filenames:
+#     count_words(filename)
+
+
