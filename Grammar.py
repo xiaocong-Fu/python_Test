@@ -586,3 +586,87 @@
 #     count_words(filename)
 
 
+# ------------------------------------------------练习--------------------------------------------
+# # 1.10.6.提示用户提供数值输入,而不是输入文本
+# isquit = True
+# while isquit:
+#     try:
+#         num_1 = input('please input the first number : ')
+#         num_2 = input('please input the second number : ')
+#         value = float(num_1) + float(num_2)
+#     except ValueError:
+#         print('Please check you number ,and , input the real number !! NOT TXT!!!!!')
+#     else:
+#         isquit = False
+#         print('the sum is ' + str(value))
+
+# # 2.10.8.读取文件
+# def readFile(filename):
+#     try:
+#         with open(filename,encoding = 'utf-8') as fileobject:
+#             contents = fileobject.read()
+#     except FileNotFoundError:
+#         pass
+#         print(filename + ' this file not exit,Please check the file!!!!!!!')
+#     else:
+#         print(contents)
+#
+# file_1 = r'test_file\cat.txt'
+# file_2 = r'test_file\dog.txt'
+# readFile(file_1)
+# readFile(file_2)
+#
+# # 3.10.10.文件中词语的计数
+# def count_file(filename):
+#     try:
+#         with open(filename,encoding = 'utf-8') as fileobject:
+#             contents = fileobject.read()
+#     except FileNotFoundError:
+#         pass
+#     else:
+#         if filename[-7:-4] == 'cat':
+#             print('this file has ' + str(contents.count('猫')) + ' counts ')
+#         if filename[-7:-4] == 'dog':
+#             print('this file has ' + str(contents.count('狗')) + ' counts ')
+#
+# count_file(file_1)
+# count_file(file_2)
+
+# -------------------------------------------------存储数据----------------------------------------------
+# import json
+# list = ['fxc','fxz',7758,'吼吼吼吼']
+# dic = {'name':'fxc','age':20,'sex':'male'}
+# filename = r'test_file\imformation.json'
+# with open(filename,'w',encoding = 'utf-8') as fileobject:
+#     # json.dump(list,fileobject,ensure_ascii = False)                                       # json.dump()将数据存储到文件中。
+#     json.dump(dic,fileobject)
+#
+# with open(filename,'r',encoding = 'utf-8') as fileobject_read:                              # json.load()读取文本中的信息。
+#     contents = json.load(fileobject_read)                                                   # 这步报错，报错原因:json标准只允许一个顶级值（json中所有的数据都在一个数据结构中存储，不能出现多个数据结构）
+#     contents_1 = fileobject_read.read()
+#     print(type(contents))                                                                   # 输出结果：<class 'list'>，输出结果：<class 'dict'>
+# print(contents)
+# print(contents_1)
+
+# username = input('Please input you name ')
+# filename = r'test_file\username.json'
+# with open(filename,'w') as file_object:
+#     json.dump(username,file_object)
+#     print('we will remenber you when you back ,' + username + '!!')
+#
+# with open(filename) as f_obj:
+#     contents = json.load(f_obj)
+#     # print(type(contents))                                                                   # 输出结果：<class 'str'>
+#     print('welcome back ' + contents)
+
+# # 改用try-except写法
+# try:
+#     with open(filename) as f_obj:
+#         contents = json.load(f_obj)
+# except FileNotFoundError:
+#     username = input('Please input you name ')
+#     with open(filename,'w') as f_obj_2:
+#         json.dump(username,f_obj_2)
+#         print('we will remenber you when you back ,' + username + '!!')
+# else:
+#     print('welcome back, ' + contents)
