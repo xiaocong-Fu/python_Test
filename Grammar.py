@@ -670,3 +670,23 @@
 #         print('we will remenber you when you back ,' + username + '!!')
 # else:
 #     print('welcome back, ' + contents)
+
+# # ----------------------------------------------练习--------------------------------------
+# # 1.10.12.储存数字
+# filename = r'test_file\username.json'
+# try:
+#     num_1 = input('Please input you favorite number : ')
+#     value = float(num_1)
+# except ValueError:
+#     print('Please input a corrent nummber!!!')
+# else:
+#     with open(filename,'w') as f_obj:
+#         json.dump(num_1,f_obj)
+#     try:
+#         with open(filename, 'r') as f_obj_2:
+#             contents = json.load(f_obj_2)
+#     except FileNotFoundError:
+#         print('Please check the file name!!!')
+#     else:
+#         print('we remenber you favorite number is :' + str(contents))
+
