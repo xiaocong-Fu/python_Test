@@ -1051,3 +1051,7 @@ venv/Scripts/pip3.8.exe
 venv/Scripts/pip3.exe
 venv/Scripts/python.exe
 venv/Scripts/pythonw.exe
+.idea/misc.xml
+Functions/Dog.py
+Functions/1111.txt
+__pycache__/Grammar.cpython-38.pyc
